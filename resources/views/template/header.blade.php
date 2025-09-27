@@ -74,8 +74,8 @@
           <div class="dropdown-submenu">
             <a href="{{route('data_collection')}}" class="dropdown-item dropdown-toggle">Data Collection</a>
             <div class="dropdown-menu">
-              <a class="dropdown-item" href="primary_data_collection.php">Primary Data</a>
-              <a class="dropdown-item" href="secondary_data_collection.php">Secondary Data</a>
+              <a class="dropdown-item" href="{{route('primary_data_collection')}}">Primary Data</a>
+              <a class="dropdown-item" href="{{route('secondary_data_collection')}}">Secondary Data</a>
             </div>
           </div>
         </div>
@@ -84,7 +84,7 @@
   </div>
 
   <!-- Menu 3 -->
-  <a href="assistance.php" class="nav-item nav-link">Assistance</a>
+  <a href="{{route('assistance')}}" class="nav-item nav-link">Assistance</a>
       <!-- Menu 4 -->
         <!-- <a href="index.php" class="nav-item nav-link">Coursework</a> -->
 
@@ -94,13 +94,13 @@
       Publications
     </a>
     <div class="dropdown-menu bg-light m-0">
-      <a href="sci_journal.php" class="dropdown-item">SCI journal List</a>
-      <a href="scopus_indexed.php" class="dropdown-item">Scopus indexed journal</a>
-      <a href="q1_journal.php" class="dropdown-item">Q1 journal Publication</a>
-      <a href="ugc_journal.php" class="dropdown-item">UGC Approved Journal</a>
-      <a href="web_of_science.php" class="dropdown-item">Web of Science</a>
-      <a href="isi_journal.php" class="dropdown-item">ISI Journal Publication</a>
-      <a href="igi_journal.php" class="dropdown-item">IGI Global Publication</a>
+      <a href="{{route('sci_journal')}}" class="dropdown-item">SCI journal List</a>
+      <a href="{{route('scopus_indexed')}}" class="dropdown-item">Scopus indexed journal</a>
+      <a href="{{route('q1_journal')}}" class="dropdown-item">Q1 journal Publication</a>
+      <a href="{{route('ugc_journal')}}" class="dropdown-item">UGC Approved Journal</a>
+      <a href="{{route('web_of_science')}}" class="dropdown-item">Web of Science</a>
+      <a href="{{route('isi_journal')}}" class="dropdown-item">ISI Journal Publication</a>
+      <a href="{{route('igi_journal')}}" class="dropdown-item">IGI Global Publication</a>
     </div>
   </div>
 
@@ -110,23 +110,23 @@
           Supplement Services
         </a>
         <div class="dropdown-menu bg-light m-0">
-          <a href="annotated_bibilography.php" class="dropdown-item">Annotated bibilography</a>
-          <a href="plagarism_removal.php" class="dropdown-item">Plagiarism Removal</a>
+          <a href="{{route('annotated_bibilography')}}" class="dropdown-item">Annotated bibilography</a>
+          <a href="{{route('plagarism_removal')}}" class="dropdown-item">Plagiarism Removal</a>
 		    <div class="dropdown-submenu">
-            <a href="data_analysis.php" class="dropdown-item dropdown-toggle">Data Analysis</a>
+            <a href="{{route('data_analysis')}}" class="dropdown-item dropdown-toggle">Data Analysis</a>
             <div class="dropdown-menu drop-sub-ser">
-              <a class="dropdown-item" href="qualitative_data_analysis.php">Qualitative data analysis</a>
-              <a class="dropdown-item" href="quantitative_data_analysis.php">Quanatitative data analysis</a>
+              <a class="dropdown-item" href="{{route('qualitative_data_analysis')}}">Qualitative data analysis</a>
+              <a class="dropdown-item" href="{{route('quantitative_data_analysis')}}">Quanatitative data analysis</a>
             </div>
         </div>
 		  <div class="dropdown-submenu">
-            <a href="review_support.php" class="dropdown-item dropdown-toggle">Review Support</a>
+            <a href="{{route('review_support')}}" class="dropdown-item dropdown-toggle">Review Support</a>
             <div class="dropdown-menu drop-sub-ser">
-              <a class="dropdown-item" href="journal_review_support.php">Journal Review Support</a>
-              <a class="dropdown-item" href="thesis_review_support.php">Thesis review Support</a>
+              <a class="dropdown-item" href="{{route('journal_review_support')}}">Journal Review Support</a>
+              <a class="dropdown-item" href="{{route('thesis_review_support')}}">Thesis review Support</a>
             </div>
           </div>
-          <a href="viva_voce.php" class="dropdown-item">Viva voce</a>
+          <a href="{{route('viva_voce')}}" class="dropdown-item">Viva voce</a>
           <a href="presentation.php" class="dropdown-item">Presentation</a>
           <a href="proofreading.php" class="dropdown-item">Proofreading</a>
         </div>

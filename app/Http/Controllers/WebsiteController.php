@@ -86,4 +86,76 @@ class WebsiteController extends Controller
     {
         return view('web.primary_data_collection');
     }
+    public function secondaryDataCollection()
+    {
+        return view('web.secondary_data_collection');
+    }
+    public function assistance()
+    {
+        return view('web.assistance');
+    }
+    public function sciJournal()
+    {
+        return view('web.sci_journal');
+    }
+    public function scopusIndexed()
+    {
+        return view('web.scopus_indexed');
+    }
+    public function q1Journal()
+    {
+        return view('web.q1_journal');
+    }
+    public function ugcJournal()
+    {
+        return view('web.ugc_journal');
+    }
+    public function webOfScience()
+    {
+        return view('web.web_of_science');
+    }
+    public function isiJournal()
+    {
+        return view('web.isi_journal');
+    }
+    public function igiJournal()
+    {
+        return view('web.igi_journal');
+    }
+    public function AnnotatedBibilography()
+    {
+        return view('web.annotated_bibilography');
+    }
+    public function plagarismRemoval()
+    {
+        return view('web.plagarism_removal');
+    }
+    public function dataAnalysis()
+    {
+        return view('web.data_analysis');
+    }
+    public function qualitativeDataAnalysis()
+    {
+        return view('web.qualitative_data_analysis');
+    }
+    public function quantitativeDataAnalysis()
+    {
+        return view('web.quantitative_data_analysis');
+    }
+    public function reviewSupport()
+    {
+        return view('web.review_support');
+    }
+    public function journalReviewSupport()
+    {
+        return view('web.journal_review_support');
+    }
+    public function thesisReviewSupport()
+    {
+        return view('web.thesis_review_support');
+    }
+    public function vivaVoce()
+    {
+        return view('web.viva_voce');
+    }
 }

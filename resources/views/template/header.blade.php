@@ -1,7 +1,3 @@
-	<!-- Spinner Start -->
-	
-	<!-- Spinner End -->
-
 
 <!-- Topbar Start -->
 <div class="container-fluid top-bar px-0">
@@ -37,46 +33,46 @@
     <div class="navbar-nav ms-auto p-4 p-lg-0">
 
   <!-- Menu 1 -->
-  <a href="index.php" class="nav-item nav-link">Home</a>
+  <a href="{{route('home')}}" class="nav-item nav-link">Home</a>
 
   <!-- Menu 2 -->
   <div class="nav-item dropdown">
     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
     <div class="dropdown-menu bg-light">
 
-      <a class="dropdown-item" href="selection_of_topics.php">Topic Selection</a>
-      <a class="dropdown-item" href="research_proposal_writing.php">Research Proposal</a>
-      <a class="dropdown-item" href="research_paper_writing.php">Research Paper Writing</a>
-      <a class="dropdown-item" href="synopsis_writing.php">Synopsis Writing</a>
-      <a class="dropdown-item" href="dissertation.php">Dissertation Writing</a>
-      <a class="dropdown-item" href="thesisi_writing.php">Thesis Writing</a>
+      <a class="dropdown-item" href="{{route('selection_of_topics')}}">Topic Selection</a>
+      <a class="dropdown-item" href="{{route('research_proposal_writing')}}">Research Proposal</a>
+      <a class="dropdown-item" href="{{route('research_paper_writing')}}">Research Paper Writing</a>
+      <a class="dropdown-item" href="{{route('synopsis_writing')}}">Synopsis Writing</a>
+      <a class="dropdown-item" href="{{route('dissertation')}}">Dissertation Writing</a>
+      <a class="dropdown-item" href="{{route('thesis_writing')}}">Thesis Writing</a>
 
       <!-- Submenu: Formatting Service -->
       <div class="dropdown-submenu">
-        <a href="formatting_service.php" class="dropdown-item dropdown-toggle">Formatting Service</a>
+        <a href="{{route('formatting_service')}}" class="dropdown-item dropdown-toggle">Formatting Service</a>
         <div class="dropdown-menu">
-          <a class="dropdown-item" href="synopsis_formatting.php">Synopsis Format</a>
-          <a class="dropdown-item" href="thesis_formatting.php">Thesis Format</a>
-          <a class="dropdown-item" href="dissertation_formatting.php">Dissertation Format</a>
+          <a class="dropdown-item" href="{{route('synopsis_formatting')}}">Synopsis Format</a>
+          <a class="dropdown-item" href="{{route('thesis_formatting')}}">Thesis Format</a>
+          <a class="dropdown-item" href="{{route('dissertation_formatting')}}">Dissertation Format</a>
         </div>
       </div>
 
       <!-- <a class="dropdown-item" href="review_paper_writing.php">Review Paper Writing</a> -->
-      <a class="dropdown-item" href="implementation.php">Implementation</a>
-      <a class="dropdown-item" href="literature_review.php">Literature Review</a>
-      <a class="dropdown-item" href="systematic_literature_review.php">Systematic Literature Review</a>
+      <a class="dropdown-item" href="{{route('implementation')}}">Implementation</a>
+      <a class="dropdown-item" href="{{route('literature_review')}}">Literature Review</a>
+      <a class="dropdown-item" href="{{route('systematic_literature_review')}}">Systematic Literature Review</a>
 
       <!-- Submenu: Research Methodology -->
       <div class="dropdown-submenu">
-        <a href="research_methodology.php" class="dropdown-item dropdown-toggle">Research Methodology</a>
+        <a href="{{route('research_methodology')}}" class="dropdown-item dropdown-toggle">Research Methodology</a>
         <div class="dropdown-menu drop-sub">
-          <a class="dropdown-item" href="sampling.php">Sampling</a>
-          <a class="dropdown-item" href="qualitative_methodology.php">Qualitative Methodology</a>
-          <a class="dropdown-item" href="quantitative_methodology.php">Quantitative Methodology</a>
+          <a class="dropdown-item" href="{{route('sampling')}}">Sampling</a>
+          <a class="dropdown-item" href="{{route('qualitative_methodology')}}">Qualitative Methodology</a>
+          <a class="dropdown-item" href="{{route('quantitative_methodology')}}">Quantitative Methodology</a>
 
           <!-- Nested submenu: Data Collection -->
           <div class="dropdown-submenu">
-            <a href="data_collection.php" class="dropdown-item dropdown-toggle">Data Collection</a>
+            <a href="{{route('data_collection')}}" class="dropdown-item dropdown-toggle">Data Collection</a>
             <div class="dropdown-menu">
               <a class="dropdown-item" href="primary_data_collection.php">Primary Data</a>
               <a class="dropdown-item" href="secondary_data_collection.php">Secondary Data</a>

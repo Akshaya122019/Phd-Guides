@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @stack('meta-tags')
     <title>Phd Guides</title>
     <!-- Google Web Fonts -->
 	<link rel="preconnect" href="https://fonts.googleapis.com/">
@@ -10,13 +11,12 @@
 	<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&amp;family=Open+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet">
 
 	<!-- Icon Font Stylesheet -->
-	<link href="font/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<!-- <link href="cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet"> -->
 
 	<!-- Libraries Stylesheet -->
-	<link href="lib/animate/animate.min.css" rel="stylesheet">
-	<link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+	<link href="{{asset('lib/animate/animate.min.css')}}" rel="stylesheet">
+	<link href="{{asset('lib/owlcarousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
 	<!-- <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet"> -->
 
 	<!-- Customized Bootstrap Stylesheet -->
@@ -165,5 +165,48 @@
             });
         }
 </script>
+
+<!-- JavaScript Libraries -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="{{asset('npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js')}}"></script>
+<script src="{{asset('lib/wow/wow.min.js')}}"></script>
+<script src="{{asset('lib/easing/easing.min.js')}}"></script>
+<script src="{{asset('lib/waypoints/waypoints.min.js')}}"></script>
+<script src="{{asset('lib/owlcarousel/owl.carousel.min.js')}}"></script>
+<script src="{{asset('lib/counterup/counterup.min.js')}}"></script>
+<script src="{{asset('lib/parallax/parallax.min.js')}}"></script>
+<script src="{{asset('lib/lightbox/js/lightbox.min.js')}}"></script>
+
+<!-- Template Javascript -->
+<script src="{{asset('js/main.js')}}"></script>
+
+
+</script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script> -->
+<!-- Initialize Toastr with your desired options. -->
+<script>
+	// toastr.options = {
+	// 	"closeButton": true,
+	// };
+	
+	// Display a notification.
+	// toastr.success('Form submitted successfully!');
+
+	var notificationMessage = $.session.get('toastr_message');
+	console.log(notificationMessage);
+	// toastr.success(notificationMessage);
+</script>
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/659e62a50ff6374032be645a/1hjpb2lrb';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+@stack('script')
 </body>
 </html>

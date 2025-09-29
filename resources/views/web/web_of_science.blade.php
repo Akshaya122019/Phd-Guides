@@ -439,7 +439,7 @@
         </div>
         <div class="text-center">
 				<a href="tel:+917708108250" class="btn btn-success btn-hover">
-                        <i class="fas fa-phone-alt me-2"></i>Connect with our publication team
+                        <i class="fas fa-phone me-2 "></i>Connect with our publication team
                 </a>
 			</div>
     </div>
@@ -555,7 +555,7 @@
                                            <div class="col-12 mb-3">
                                                <div class="input-group">
                                                    <span class="input-group-text bg-light">
-                                                       <i class="fas fa-phone-alt text-success"></i>
+                                                       <i class="fas fa-phone text-success"></i>
                                                    </span>
                                                    <input type="tel" class="form-control" placeholder="Contact">
                                                </div>

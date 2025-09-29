@@ -197,7 +197,7 @@
               <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email">
             </div>
             <div class="mb-3">
-              <label for="contact" class="form-label text-dark"><i class="fas fa-envelope me-2 text-primary"></i>Contact</label>
+              <label for="contact" class="form-label text-dark"><i class="fas fa-phone me-2 text-primary"></i>Contact</label>
               <input type="tel" id="contact" name="contact" class="form-control" placeholder="Enter your Contact">
             </div>
             <div class="mb-3">

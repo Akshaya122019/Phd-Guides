@@ -224,7 +224,7 @@
                     Whether you're using APA, IEEE, or MLA, our formatting service ensures your thesis writing format meets every requirement from the title page to the last reference.
                 </p>
             <a href="tel:+917708108250" class="btn btn-success btn-hover">
-                <i class="fas fa-phone-alt me-2"></i> Contact with the expert
+                <i class="fas fa-phone me-2 "></i> Contact with the expert
             </a>
             </div>
 		</div>

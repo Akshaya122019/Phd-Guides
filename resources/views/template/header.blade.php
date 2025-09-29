@@ -10,7 +10,7 @@
       <div class="h-100 d-inline-flex align-items-center text-dark py-2 px-4" style="background-color:#c0b521">
         <a href="tel:+917708108250" class="text-dark fw-bold">
           <span class="me-2 fw-semi-bold">
-            <i class="fa fa-phone-alt me-2"></i>Call Us:
+            <i class="fa fa-phone me-2"></i>Call Us:
           </span>
           <span>+91 7708108250</span>
         </a>
@@ -127,13 +127,12 @@
             </div>
           </div>
           <a href="{{route('viva_voce')}}" class="dropdown-item">Viva voce</a>
-          <a href="presentation.php" class="dropdown-item">Presentation</a>
-          <a href="proofreading.php" class="dropdown-item">Proofreading</a>
+          <a href="{{route('presentation')}}" class="dropdown-item">Presentation</a>
+          <a href="{{route('proofreading')}}" class="dropdown-item">Proofreading</a>
         </div>
       </div>
-
-
-      <a href="contact-us.php" class="nav-item nav-link">Contact</a>
+      
+      <a href="{{route('contact-us')}}" class="nav-item nav-link">Contact</a>
 
     </div>
   </div>

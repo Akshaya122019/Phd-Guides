@@ -215,7 +215,7 @@
 
 		<div class="text-center">
 				<a href="tel:+917708108250" class="btn btn-success btn-hover">
-                        <i class="fas fa-phone-alt me-2"></i>Get a Free Consultation with our Scholars
+                        <i class="fas fa-phone me-2 "></i>Get a Free Consultation with our Scholars
                 </a>
 			</div>
 
@@ -409,7 +409,7 @@
               <input type="text" id="name" class="form-control" placeholder="Enter your name">
             </div>
 			<div class="mb-3">
-              <label for="contact" class="form-label text-dark"><i class="fas fa-phone-alt me-2 text-primary"></i>Contact</label>
+              <label for="contact" class="form-label text-dark"><i class="fas fa-phone me-2  text-primary"></i>Contact</label>
               <input type="text" id="contact" class="form-control" placeholder="Enter your Contact">
             </div>
 			<div class="mb-3">

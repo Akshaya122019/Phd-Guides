@@ -46,3 +46,7 @@ Route::get('/review_support', [WebsiteController::class,'reviewSupport'])->name(
 Route::get('/journal_review_support', [WebsiteController::class,'journalReviewSupport'])->name('journal_review_support');
 Route::get('/thesis_review_support', [WebsiteController::class,'thesisReviewSupport'])->name('thesis_review_support');
 Route::get('/viva_voce', [WebsiteController::class,'vivaVoce'])->name('viva_voce');
+Route::get('/presentation', [WebsiteController::class,'presentation'])->name('presentation');
+Route::get('/proofreading', [WebsiteController::class,'proofreading'])->name('proofreading');
+Route::get('/contact-us', [WebsiteController::class,'ContactUs'])->name('contact-us');
+Route::get('/404_page', [WebsiteController::class,'Page'])->name('404_page');

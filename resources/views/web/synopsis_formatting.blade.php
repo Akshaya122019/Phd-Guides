@@ -301,7 +301,7 @@
               <input type="text" id="name" name="name" class="form-control" placeholder="Enter your name">
             </div>
 			<div class="mb-3">
-              <label for="contact" class="form-label text-dark"><i class="fas fa-phone-alt me-2 text-primary"></i>Contact</label>
+              <label for="contact" class="form-label text-dark"><i class="fas fa-phone me-2  text-primary"></i>Contact</label>
               <input type="text" id="contact" name="contact" class="form-control" placeholder="Enter your Contact">
             </div>
 			<div class="mb-3">
@@ -425,7 +425,7 @@
                     </div>
                     <p class="py-3">When you opt for our PhD assistance, you're opting for peace of mind. We don't only satisfy formatting guidelines, we surpass them and provide the best PhD synopsis format.</p>
                     <div class="text-center">
-			            <a href="tel:+919791191188" class="btn btn-success px-4 py-2 fs-5"><i class="fa fa-phone-alt"></i>&nbsp;&nbsp;&nbsp;Book a Call Now!</a>
+			            <a href="tel:+919791191188" class="btn btn-success px-4 py-2 fs-5"><i class="fa fa-phone"></i>&nbsp;&nbsp;&nbsp;Book a Call Now!</a>
                     </div>
                     
                 </div>

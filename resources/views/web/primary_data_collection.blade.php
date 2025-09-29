@@ -212,7 +212,7 @@
 <!-- Choosing Start -->
 <div class="container-xxl py-4">
     <div class="container">
-        <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+        <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s">
                 <h2 class="mb-3 fs-4">Choosing the Right Primary Data Collection Method for Your Field</h2>
             </div>
             <div class="row">
@@ -596,7 +596,7 @@
               <input type="email" id="email" class="form-control" placeholder="Enter your email">
             </div>
 			      <div class="mb-3">
-              <label for="contact" class="form-label text-dark"><i class="fas fa-phone-alt me-2 text-primary"></i> Contact</label>
+              <label for="contact" class="form-label text-dark"><i class="fas fa-phone me-2  text-primary"></i> Contact</label>
               <input type="text" id="contact" class="form-control" placeholder="Enter your Contact">
             </div>
             <div class="mb-3">

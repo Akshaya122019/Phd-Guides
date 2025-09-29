@@ -259,7 +259,7 @@
 				</p>
 				<div class="text-center mt-3 mt-md-0">
 					<a href="tel:+917708108250" class="btn btn-secondary btn-hover">
-					<i class="fas fa-phone-alt me-2"></i>Connect With the Scholar 
+					<i class="fas fa-phone me-2 "></i>Connect With the Scholar 
 					</a>
             	</div>
                 </div>

@@ -158,4 +158,20 @@ class WebsiteController extends Controller
     {
         return view('web.viva_voce');
     }
+    public function presentation()
+    {
+        return view('web.presentation');
+    }
+    public function proofreading()
+    {
+        return view('web.proofreading');
+    }
+    public function ContactUs()
+    {
+        return view('web.contact-us');
+    }
+    public function Page()
+    {
+        return view('web.404_page');
+    }
 }

@@ -289,7 +289,7 @@
                     <div class="process-we text-center lh-lg">
                         Whether it’s your first paper or your fifth, our team steps in with hands-on support for every phase. We the PhD Guides don’t just prepare your manuscript, we prepare it to succeed. Your time and research deserve a place in the world’s top academic platforms. Let’s make that happen with precision, quality, and speed.<br>
                     <a href="tel:+917708108250" class="btn btn-success btn-hover">
-                        <i class="fas fa-phone-alt me-2"></i>Connect with Experts
+                        <i class="fas fa-phone me-2 "></i>Connect with Experts
                     </a>                    
                 </div>
                 </div>
@@ -367,7 +367,7 @@
               <input type="text" id="name" name="name" class="form-control" placeholder="Enter your name">
             </div>
 			<div class="mb-3">
-              <label for="contact" class="form-label text-dark"><i class="fas fa-phone-alt me-2 text-primary"></i>Contact</label>
+              <label for="contact" class="form-label text-dark"><i class="fas fa-phone me-2  text-primary"></i>Contact</label>
               <input type="text" id="contact" name="contact" class="form-control" placeholder="Enter your Contact">
             </div>
 			<div class="mb-3">

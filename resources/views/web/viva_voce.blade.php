@@ -161,14 +161,8 @@
 						<p>Final verdict is shared pass, minor/major revisions, resubmission, or fail.</p>
 					</div>
                 </div>
-
-
-
             </div>
         </div>
-
-
-
     </div>
 </div>
 <!-- How the phd viva Ends -->
@@ -256,7 +250,7 @@
               <i class="fab fa-whatsapp me-2"></i>Via WhatsApp
               </a>
               <a href="tel:+917708108250" class="btn btn-secondary btn-hover">
-              <i class="fas fa-phone-alt me-2"></i>Call
+              <i class="fas fa-phone me-2 "></i>Call
               </a>
             </div>
             </div>
@@ -419,7 +413,7 @@
               <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email">
             </div>
 			      <div class="mb-3">
-              <label for="contact" class="form-label text-dark"><i class="fas fa-phone-alt me-2 text-primary"></i> Contact</label>
+              <label for="contact" class="form-label text-dark"><i class="fas fa-phone me-2  text-primary"></i> Contact</label>
               <input type="text" id="contact" name="contact" class="form-control" placeholder="Enter your Contact">
             </div>
             <div class="mb-3">

@@ -252,7 +252,7 @@
               <input type="text" id="name" name="name" class="form-control" placeholder="Enter your name">
             </div>
 			<div class="mb-3">
-              <label for="contact" class="form-label text-dark"><i class="fas fa-phone-alt me-2 text-primary"></i>Contact</label>
+              <label for="contact" class="form-label text-dark"><i class="fas fa-phone me-2  text-primary"></i>Contact</label>
               <input type="text" id="contact" name="contact" class="form-control" placeholder="Enter your Contact">
             </div>
 			<div class="mb-3">
@@ -390,7 +390,7 @@
 
 			<div class="text-center mt-4">
 			<p>Whether your research is experimental, theoretical, or interdisciplinary, we’ve got you covered with subject-specific guidance.</p>
-			<a href="tel:+919791191188" class="btn btn-primary px-4 py-2"><i class="fa fa-phone-alt"></i> Connect With Our Team</a>
+			<a href="tel:+919791191188" class="btn btn-primary px-4 py-2"><i class="fa fa-phone"></i> Connect With Our Team</a>
 			</div>
 
     </div>

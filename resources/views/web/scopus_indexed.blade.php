@@ -210,7 +210,7 @@
 
         <div class="text-center">
           <a href="tel:+917708108250" class="btn btn-secondary btn-hover">
-              <i class="fas fa-phone-alt me-2"></i>Connect with our publication team
+              <i class="fas fa-phone me-2 "></i>Connect with our publication team
           </a>
         </div>
         
@@ -338,7 +338,7 @@
               <input type="text" id="name" name="name" class="form-control" placeholder="Enter your name">
             </div>
 			<div class="mb-3">
-              <label for="contact" class="form-label text-dark"><i class="fas fa-phone-alt me-2 text-primary"></i>Contact</label>
+              <label for="contact" class="form-label text-dark"><i class="fas fa-phone me-2  text-primary"></i>Contact</label>
               <input type="tel" id="contact" name="contact" class="form-control" placeholder="Enter your Phone">
             </div>
             <div class="mb-3">

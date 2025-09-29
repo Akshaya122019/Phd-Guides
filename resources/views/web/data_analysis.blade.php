@@ -74,7 +74,7 @@
 <div class="container-xxl py-5">
     <div class="container">
         <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
-                <h2 class="mb-3">Data Analysis in PhD Research</h2>
+                <h2 class="mb-3 fs-4">Data Analysis in PhD Research</h2>
             </div>
             <div class="row">
                 <div class="col-md-12">
@@ -264,7 +264,7 @@
             </div>
             <div class="col-md-4 text-md-end mt-3 mt-md-0">
               <a href="tel:+917708108250" class="btn btn-secondary btn-hover">
-              <i class="fas fa-phone-alt me-2"></i>Get a consultation from our team 
+              <i class="fas fa-phone me-2 "></i>Get a consultation from our team 
               </a>
             </div>
             </div>
@@ -606,7 +606,7 @@
               <input type="email" id="email" class="form-control" placeholder="Enter your email">
             </div>
 			<div class="mb-3">
-              <label for="contact" class="form-label text-dark"><i class="fas fa-phone-alt me-2 text-primary"></i>Contact</label>
+              <label for="contact" class="form-label text-dark"><i class="fas fa-phone me-2  text-primary"></i>Contact</label>
               <input type="text" id="contact" class="form-control" placeholder="Enter your Contact">
             </div>
             <div class="mb-3">

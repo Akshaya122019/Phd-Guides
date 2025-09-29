@@ -91,7 +91,7 @@
 <div class="container-xxl py-4">
     <div class="container">
         <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s">
-                <h2 class="mb-4">Why and When to Use Qualitative Research Methodology for Your PhD – Professional PhD Support</h2>
+                <h2 class="mb-4 fs-4">Why and When to Use Qualitative Research Methodology for Your PhD – Professional PhD Support</h2>
             </div>
             <div class="row">
                 <div class="col-md-12">
@@ -216,7 +216,7 @@
 						<i class="fab fa-whatsapp me-2"></i>WhatsApp
 						</a>
 						<a href="tel:+917708108250" class="btn btn-secondary btn-hover">
-						<i class="fas fa-phone-alt me-2"></i>Phone
+						<i class="fas fa-phone me-2 "></i>Phone
 						</a>
 					</div>
 					</div>
@@ -490,7 +490,7 @@
               <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email">
             </div>
 			<div class="mb-3">
-              <label for="contact" class="form-label text-dark"><i class="fas fa-phone-alt me-2 text-primary"></i>Contact</label>
+              <label for="contact" class="form-label text-dark"><i class="fas fa-phone me-2  text-primary"></i>Contact</label>
               <input type="text" id="contact" name="contact" class="form-control" placeholder="Enter your Contact">
             </div>
             <div class="mb-3">

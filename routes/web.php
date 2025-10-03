@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Artisan;
 use App\Http\Controllers\WebsiteController;
+use App\Http\Controllers\FormController;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -50,3 +51,5 @@ Route::get('/presentation', [WebsiteController::class,'presentation'])->name('pr
 Route::get('/proofreading', [WebsiteController::class,'proofreading'])->name('proofreading');
 Route::get('/contact-us', [WebsiteController::class,'ContactUs'])->name('contact-us');
 Route::get('/404_page', [WebsiteController::class,'Page'])->name('404_page');
+Route::resource('form', FormController::class);
+Route::post('/save', [FormController::class,'save'])->name('form.save');

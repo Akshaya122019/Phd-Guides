@@ -52,12 +52,20 @@
 	<div class="right-panel p-5">
 		<div class="p-3 pt-3" style="display:block">
 			<h5 class="text-center text-success">Get Started</h5>
+			@if(session('success'))
+                <div style="color: green;">{{ session('success') }}</div>
+            @endif
+            @if(session('error'))
+                <div style="color: red;">{{ session('error') }}</div>
+            @endif
 			<!-- Single Form -->
-			<form>
+			<form action="{{ route('form.save') }}" method="POST" enctype="multipart/form-data">
+            @csrf
 				<input type="text" class="form-control m-3" name="name" placeholder="Name" required>
 				<input type="text" class="form-control m-3" name="contact" placeholder="Contact" required>
 				<input type="email" class="form-control m-3" name="email" placeholder="Email" required>
 				<input type="text" class="form-control m-3" name="place" placeholder="Place" required>
+                <input type="hidden" name="page" value="Thesis Formatting">
 				<input type="submit" class="form-control m-3" style="background-color:#09b87e;color:white;border:none;border-radius:5px;padding:12px;font-weight:600;cursor:pointer;" value="Submit Request">
 			</form>
 		</div>
@@ -127,25 +135,34 @@
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form>
+         @if(session('success'))
+            <div style="color: green;">{{ session('success') }}</div>
+        @endif
+        @if(session('error'))
+            <div style="color: red;">{{ session('error') }}</div>
+        @endif
+          <form action="{{ route('form.store') }}" method="POST" enctype="multipart/form-data">
+            @csrf
           <div class="mb-3">
             <label class="form-label">Name:</label>
-            <input type="text" class="form-control" placeholder="Your Name">
+            <input type="text" class="form-control" name="name" placeholder="Your Name">
           </div>
           <div class="mb-3">
             <label class="form-label">Email:</label>
-            <input type="email" class="form-control" placeholder="you@example.com">
+            <input type="email" class="form-control" name="email" placeholder="you@example.com">
           </div>
           <div class="mb-3">
             <label class="form-label">University/Topic:</label>
-            <input type="text" class="form-control" placeholder="Your Topic or Institution">
+            <input type="text" class="form-control" name="research_area" placeholder="Your Topic or Institution">
           </div>
-        </form>
+          <input type="hidden" name="page" value="Thesis Formatting">
+        
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Submit Request</button>
+        <button type="submit" class="btn btn-primary">Submit Request</button>
       </div>
+      </form>
     </div>
   </div>
 </div>
@@ -273,14 +290,23 @@
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form>
+        {{-- Success / Error Flash Messages --}}
+        @if(session('success'))
+            <div style="color: green;">{{ session('success') }}</div>
+        @endif
+        @if(session('error'))
+            <div style="color: red;">{{ session('error') }}</div>
+        @endif
+
+        <form action="{{ route('form.store') }}" method="POST" enctype="multipart/form-data">
+          @csrf
           <div class="mb-3">
             <label class="form-label">Name:</label>
-            <input type="text" name="name" class="form-control" placeholder="Your Name">
+            <input type="text" name="name" class="form-control" placeholder="Your Name" required>
           </div>
           <div class="mb-3">
             <label class="form-label">Email:</label>
-            <input type="email" name="email" class="form-control" placeholder="you@example.com">
+            <input type="email" name="email" class="form-control" placeholder="you@example.com" required>
           </div>
           <div class="mb-3">
             <label class="form-label">Contact:</label>
@@ -288,17 +314,20 @@
           </div>
           <div class="mb-3">
             <label class="form-label">Document:</label>
-            <input type="file" name="doc" class="form-control" placeholder="Submit Your Document">
+            <input type="file" name="document" class="form-control">
+          </div>
+          <input type="hidden" name="page" value="Thesis Formatting">
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Submit Request</button>
           </div>
         </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Submit Request</button>
       </div>
     </div>
   </div>
 </div>
+
 
 <!-- How we align Start -->
 <div class="container-xxl py-4">

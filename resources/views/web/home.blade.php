@@ -63,8 +63,15 @@
 
 		<div id="form-service" class="form-section p-5 pt-3">
 		<h6>Services Form</h6>
+        @if(session('success'))
+            <div style="color: green;">{{ session('success') }}</div>
+        @endif
+        @if(session('error'))
+            <div style="color: red;">{{ session('error') }}</div>
+        @endif
 		<!-- Services Form Fields -->
-		<form>
+		<form action="{{ route('form.store') }}" method="POST" enctype="multipart/form-data">
+            @csrf
 			<input type="text" class="form-control m-3" name="name" placeholder="Name">
 			<input type="text" class="form-control m-3" name="contact" placeholder="Contact">
 				<select class="form-control m-3" name="service">
@@ -84,14 +91,22 @@
 			<input type="text" class="form-control m-3" name="domain" placeholder="Domain">
 			<input type="email" class="form-control m-3" name="email" placeholder="Email">
 			<input type="text" class="form-control m-3" name="place" placeholder="place">
+            <input type="hidden" name="page" value="Home">
 			<input type="Submit" class="form-control m-3" style="background-color:#09b87e;color:white">
 		</form>
 		</div>
 
 		<div id="form-supplementary" class="form-section p-5 pt-3">
 		<h6>Supplementary Services</h6>
+        @if(session('success'))
+            <div style="color: green;">{{ session('success') }}</div>
+        @endif
+        @if(session('error'))
+            <div style="color: red;">{{ session('error') }}</div>
+        @endif
 		<!-- Supplementary Services Form Fields -->
-		<form>
+		<form action="{{ route('form.store') }}" method="POST" enctype="multipart/form-data">
+            @csrf
 			<input type="text" class="form-control m-3" name="name" placeholder="Name">
 			<input type="text" class="form-control m-3" name="contact" placeholder="Contact">
 				<select class="form-control m-3" name="service">
@@ -107,6 +122,7 @@
 			<input type="text" class="form-control m-3" name="domain" placeholder="Domain">
 			<input type="email" class="form-control m-3" name="email" placeholder="Email">
 			<input type="text" class="form-control m-3" name="place" placeholder="place">
+            <input type="hidden" name="page" value="Home">
 			<input type="Submit" class="form-control m-3" style="background-color:#09b87e;color:white">
 		</form>
 		</div>

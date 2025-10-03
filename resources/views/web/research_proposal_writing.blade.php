@@ -52,13 +52,21 @@
 	<div class="right-panel p-5">
 		<div class="p-3 pt-3" style="display:block">
 			<h5 class="text-center text-success">Get Started</h5>
+            @if(session('success'))
+                <div style="color: green;">{{ session('success') }}</div>
+            @endif
+            @if(session('error'))
+                <div style="color: red;">{{ session('error') }}</div>
+            @endif
 			<!-- Single Form -->
-			<form>
+			<form action="{{ route('form.save') }}" method="POST" enctype="multipart/form-data">
+            @csrf
 				<input type="text" class="form-control m-3" name="name" placeholder="Name" required>
 				<input type="text" class="form-control m-3" name="contact" placeholder="Contact" required>
 				<input type="text" class="form-control m-3" name="domain" placeholder="Domain" required>
 				<input type="email" class="form-control m-3" name="email" placeholder="Email" required>
 				<input type="text" class="form-control m-3" name="place" placeholder="Place" required>
+                <input type="hidden" name="page" value="Reseacrh Proposel Writing">
 				<input type="submit" class="form-control m-3" style="background-color:#09b87e;color:white;border:none;border-radius:5px;padding:12px;font-weight:600;cursor:pointer;" value="Submit Request">
 			</form>
 		</div>
@@ -71,7 +79,7 @@
     <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="assistance">
+                    <div class="assistance lh-lg">
                         <p>Many PhD scholars feel stuck, unsure where to begin or how to structure their ideas. A research proposal isn’t just another academic task—it’s the roadmap to your entire doctoral journey. Without the right direction, even brilliant ideas can seem unclear or incomplete. That’s where our professional PhD assistance comes in. We provide great research proposal writing service that transforms your concepts and ideas into a brief, concise, and compelling proposal. From scratch or editing an existing draft, our trusted PhD assistance guarantees academic superiority at each stage. Allow us to help you create an approved proposal and initiate your research.</p>
                     </div>
                 </div>
@@ -91,7 +99,7 @@
                 <div class="col-md-12">
                     <div class="card border-0 shadow-sm bg-light p-4">
     <div class="card-body">
-      <p>
+      <p class="lh-lg">
       A good research proposal is more than an administrative exercise—it is an indication of your scholarly enthusiasm and preparedness for individual research. It is the start of your entire doctoral journey. A good proposal starts with a well-thought-out and clear title that has an abstract expressing your plan. It should state specific research goals, have a critical review of the literature, and have an accounted method. Other components like a suggested schedule, anticipated outcomes, and multiple citations fortify the proposal framework. Each one should provide scholarly perception, originality, and comprehension. With professional research proposal assistance, researchers enjoy experienced backing, which facilitates a sharpened focus and organization. It also reduces rejection prospects by proper institutional compliance. Above all, your proposal must explicitly highlight the research gap that your research seeks to fill. Underpinned by astute PhD mentorship, your proposal will be exceptional in terms of its worth, academic merit, and research significance, forming the foundation for a successful PhD journey.
       </p>
 
@@ -202,7 +210,7 @@
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    <div class="assistance">
+                    <div class="assistance lh-lg">
                         <p>Choosing PhD Guides means partnering with a team that truly understands your academic challenges. We offer personalized PhD guidance designed to simplify complex research concepts and convert them into a structured, impactful proposal. Our team has helped hundreds of scholars across disciplines secure approvals with confidence. Whether you need complete PhD assistance from topic selection to final submission or expert research proposal help for a single section, we adapt to your unique needs. Every proposal we handle is reviewed by subject-matter experts, ensuring quality, originality, and academic relevance. Most importantly, your privacy is our top priority—we ensure complete confidentiality throughout your journey. With PhD Guides, you don’t just get editing; you gain a trusted academic partner who’s committed to your success. Let us help you turn your research vision into a winning proposal.</p>
                     </div>
                 </div>
@@ -306,7 +314,7 @@
         </div>
 		<div class="card border-0 shadow-lg p-4 rounded-4">
           <div class="card-body">
-            <p class="text-muted mb-0">
+            <p class="text-muted mb-0 lh-lg">
               At PhD Guides, we commit to the highest in each proposal that we endorse. With our reliable research proposal expert support, you get 100% original material that is specifically designed to serve your research objectives—never replicated or recycled. We adhere meticulously to deadlines, delivering on time without sacrificing quality. Each project is worked on by competent academic specialists with profound expertise and experience. Our expert PhD mentorship is crafted to ensure that you achieve university standards alongside representing your individual research aspiration. From initial draft to ultimate review, we promise quality, discretion, and unshakeable guidance throughout your proposal process.
             </p>
           </div>
@@ -324,7 +332,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="assistance">
-                        <p>We provide one-on-one <b>PhD assistance</b> for your academic path. From defining your research gap to writing and perfecting your <b>research proposal</b>, our specialists help you at every step. We start with a one-on-one consultation to learn about your field and objectives, proceed to elaborate topic selection, <b>proposal organization</b>, and literature aid, and then ensure your work is of university standards and yet original and scholarly in depth. Whether you are starting out or bogged down in the middle, our customized <b>PhD guidance</b> will guide you ahead with confidence. With professional <b>research proposal assistance</b>, you remain on the right path to a triumphant PhD process.</p>
+                        <p class="lh-lg">We provide one-on-one <b>PhD assistance</b> for your academic path. From defining your research gap to writing and perfecting your <b>research proposal</b>, our specialists help you at every step. We start with a one-on-one consultation to learn about your field and objectives, proceed to elaborate topic selection, <b>proposal organization</b>, and literature aid, and then ensure your work is of university standards and yet original and scholarly in depth. Whether you are starting out or bogged down in the middle, our customized <b>PhD guidance</b> will guide you ahead with confidence. With professional <b>research proposal assistance</b>, you remain on the right path to a triumphant PhD process.</p>
                     </div>
                 </div>
             </div>
@@ -340,27 +348,34 @@
       <div class="col-md-6 mb-4 mb-md-0">
         <h2 class="fw-bold mb-3 text-success fs-2">Caught up in the complexity of proposal writing?</h2>
       </div>
-
+        @if(session('success'))
+            <div style="color: green;">{{ session('success') }}</div>
+        @endif
+        @if(session('error'))
+            <div style="color: red;">{{ session('error') }}</div>
+        @endif
       <!-- Right: Form -->
       <div class="col-md-6">
         <div class="card border-0 shadow-sm p-4" id="ver-form">
-          <form>
+          <form action="{{ route('form.store') }}" method="POST" enctype="multipart/form-data">
+            @csrf
             <div class="mb-3">
-              <label for="name" class="form-label text-dark"><i class="fas fa-user me-2 text-primary"></i>Name</label>
-              <input type="text" id="name" class="form-control" placeholder="Enter your name">
+              <label class="form-label text-dark"><i class="fas fa-user me-2 text-primary"></i>Name</label>
+              <input type="text" name="name" class="form-control" placeholder="Enter your name">
             </div>
             <div class="mb-3">
-              <label for="email" class="form-label text-dark"><i class="fas fa-envelope me-2 text-primary"></i>Email</label>
-              <input type="email" id="email" class="form-control" placeholder="Enter your email">
+              <label class="form-label text-dark"><i class="fas fa-envelope me-2 text-primary"></i>Email</label>
+              <input type="email" name="email" class="form-control" placeholder="Enter your email">
             </div>
             <div class="mb-3">
-              <label for="topic" class="form-label text-dark"><i class="fas fa-book me-2 text-primary"></i>Research Area</label>
-              <input type="text" id="topic" class="form-control" placeholder="Enter your topic">
+              <label class="form-label text-dark"><i class="fas fa-book me-2 text-primary"></i>Research Area</label>
+              <input type="text" name="research_area" class="form-control" placeholder="Enter your topic">
             </div>
 			      <div class="mb-3">
-              <label for="contact" class="form-label text-dark"><i class="fas fa-phone me-2  text-primary"></i>Contact</label>
-              <input type="text" id="contact" class="form-control" placeholder="Enter your Contact">
+              <label class="form-label text-dark"><i class="fas fa-phone me-2  text-primary"></i>Contact</label>
+              <input type="text" name="contact" class="form-control" placeholder="Enter your Contact">
             </div>
+            <input type="hidden" name="page" value="Research Proposel Writing">
             <button type="submit" class="btn btn-success w-100 mt-2">Connect With Our Team</button>
           </form>
         </div>

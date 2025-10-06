@@ -52,12 +52,20 @@
 	<div class="right-panel p-5">
 		<div class="p-3 pt-3" style="display:block">
 			<h5 class="text-center text-success">Get Started</h5>
+			@if(session('success'))
+                <div style="color: green;">{{ session('success') }}</div>
+            @endif
+            @if(session('error'))
+                <div style="color: red;">{{ session('error') }}</div>
+            @endif
 			<!-- Single Form -->
-			<form>
+			<form action="{{ route('form.save') }}" method="POST" enctype="multipart/form-data">
+            @csrf
 				<input type="text" class="form-control m-3" name="name" placeholder="Name" required>
 				<input type="text" class="form-control m-3" name="contact" placeholder="Contact" required>
 				<input type="email" class="form-control m-3" name="email" placeholder="Email" required>
 				<input type="text" class="form-control m-3" name="place" placeholder="Place" required>
+                <input type="hidden" name="page" value="Web Of Science">
 				<input type="submit" class="form-control m-3" style="background-color:#09b87e;color:white;border:none;border-radius:5px;padding:12px;font-weight:600;cursor:pointer;" value="Submit Request">
 			</form>
 		</div>
@@ -541,14 +549,21 @@
                        <div class="col-10">
                            <div class="card shadow-lg border-0">
                                <div class="card-body p-4">
-                                   <form>
+                                   @if(session('success'))
+                                        <div style="color: green;">{{ session('success') }}</div>
+                                    @endif
+                                    @if(session('error'))
+                                        <div style="color: red;">{{ session('error') }}</div>
+                                    @endif
+                                    <form action="{{ route('form.store') }}" method="POST" enctype="multipart/form-data">
+                                    @csrf
                                        <div class="row">
                                            <div class="col-12 mb-3">
                                                <div class="input-group">
                                                    <span class="input-group-text bg-light">
                                                        <i class="fas fa-user text-primary"></i>
                                                    </span>
-                                                   <input type="text" class="form-control" placeholder="Name">
+                                                   <input type="text" class="form-control" name="name" placeholder="Name">
                                                </div>
                                            </div>
                                            
@@ -557,7 +572,7 @@
                                                    <span class="input-group-text bg-light">
                                                        <i class="fas fa-phone text-success"></i>
                                                    </span>
-                                                   <input type="tel" class="form-control" placeholder="Contact">
+                                                   <input type="tel" class="form-control" name="contact" placeholder="Contact">
                                                </div>
                                            </div>
                                            
@@ -566,7 +581,7 @@
                                                    <span class="input-group-text bg-light">
                                                        <i class="fas fa-envelope text-info"></i>
                                                    </span>
-                                                   <input type="email" class="form-control" placeholder="Email">
+                                                   <input type="email" class="form-control" name="email" placeholder="Email">
                                                </div>
                                            </div>
                                            
@@ -575,10 +590,10 @@
                                                    <span class="input-group-text bg-light">
                                                        <i class="fas fa-map-marker-alt text-danger"></i>
                                                    </span>
-                                                   <input type="text" class="form-control" placeholder="Place">
+                                                   <input type="text" class="form-control" name="place" placeholder="Place">
                                                </div>
                                            </div>
-                                           
+                                            <input type="hidden" name="page" value="Web Of Science">
                                            <div class="col-12">
                                                <button type="submit" class="btn btn-success w-100 py-2">
                                                    <i class="fas fa-paper-plane me-2"></i>

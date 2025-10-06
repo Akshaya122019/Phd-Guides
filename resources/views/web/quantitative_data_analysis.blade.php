@@ -51,12 +51,20 @@
 	<div class="right-panel p-5">
 		<div class="p-3 pt-3" style="display:block">
 			<h5 class="text-center text-success">Get Started</h5>
+			@if(session('success'))
+                <div style="color: green;">{{ session('success') }}</div>
+            @endif
+            @if(session('error'))
+                <div style="color: red;">{{ session('error') }}</div>
+            @endif
 			<!-- Single Form -->
-			<form>
+			<form action="{{ route('form.save') }}" method="POST" enctype="multipart/form-data">
+            @csrf
 				<input type="text" class="form-control m-3" name="name" placeholder="Name" required>
 				<input type="text" class="form-control m-3" name="contact" placeholder="Contact" required>
 				<input type="email" class="form-control m-3" name="email" placeholder="Email" required>
 				<input type="text" class="form-control m-3" name="place" placeholder="Place" required>
+        <input type="hidden" name="page" value="Quanatitative Data Analysis">
 				<input type="submit" class="form-control m-3" style="background-color:#09b87e;color:white;border:none;border-radius:5px;padding:12px;font-weight:600;cursor:pointer;" value="Submit Request">
 			</form>
 		</div>
@@ -403,7 +411,14 @@
 <div class="container d-flex justify-content-center align-items-center min-vh-70">
     <div class="card shadow border-0 w-100" style="max-width: 600px;">
       <div class="card-body p-4">
-        <form>
+        @if(session('success'))
+            <div style="color: green;">{{ session('success') }}</div>
+        @endif
+        @if(session('error'))
+            <div style="color: red;">{{ session('error') }}</div>
+        @endif
+          <form action="{{ route('form.store') }}" method="POST" enctype="multipart/form-data">
+            @csrf
           <div class="mb-3">
             <label for="name" class="form-label">Name</label>
             <input type="text" class="form-control rounded-3" id="name" name="name" placeholder="Your Name" required>
@@ -416,14 +431,14 @@
 
           <div class="mb-3">
             <label for="requirements" class="form-label">Enter your requirements <span class="text-muted">(optional)</span></label>
-            <textarea class="form-control rounded-3" id="requirements" name="method" rows="4" placeholder="Type your requirements..."></textarea>
+            <textarea class="form-control rounded-3" id="requirements" name="research_area" rows="4" placeholder="Type your requirements..."></textarea>
           </div>
 
           <div class="mb-3">
             <label for="email" class="form-label">Email</label>
             <input type="email" class="form-control rounded-3" id="email" name="email" placeholder="example@email.com" required>
           </div>
-
+          <input type="hidden" name="page" value="Quanatitative Data Analysis">
           <div class="d-grid">
             <button type="submit" class="btn btn-primary rounded-3">Submit</button>
           </div>

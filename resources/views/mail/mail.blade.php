@@ -8,7 +8,10 @@
 <body>
 <h2>New Form Submission</h2>
 <p><strong>Name:</strong> {{ $formData['name'] }}</p>
+@if (!empty($formData['email']))
 <p><strong>Email:</strong> {{ $formData['email'] }}</p>
+@endif
+
 @if (!empty($formData['contact']))
 <p><strong>Contact:</strong> {{ $formData['contact'] }}</p>
 @endif
@@ -27,6 +30,15 @@
 @endif
 @if (!empty($formData['document']))
 <p><strong>Document:</strong> {{ $formData['document'] }}</p>
+@endif
+@if (!empty($formData['date']))
+<p><strong>Consultation Date:</strong> {{ $formData['date'] }}</p>
+@endif
+@if (!empty($formData['subject']))
+<p><strong>Subject:</strong> {{ $formData['subject'] }}</p>
+@endif
+@if (!empty($formData['message']))
+<p><strong>Message:</strong> {{ $formData['message'] }}</p>
 @endif
 </body>
 </html>

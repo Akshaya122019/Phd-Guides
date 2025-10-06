@@ -51,12 +51,20 @@
 	<div class="right-panel p-5">
 		<div class="p-3 pt-3" style="display:block">
 			<h5 class="text-center text-success">Get Started</h5>
+			@if(session('success'))
+                <div style="color: green;">{{ session('success') }}</div>
+            @endif
+            @if(session('error'))
+                <div style="color: red;">{{ session('error') }}</div>
+            @endif
 			<!-- Single Form -->
-			<form>
+			<form action="{{ route('form.save') }}" method="POST" enctype="multipart/form-data">
+            @csrf
 				<input type="text" class="form-control m-3" name="name" placeholder="Name" required>
 				<input type="text" class="form-control m-3" name="contact" placeholder="Contact" required>
 				<input type="email" class="form-control m-3" name="email" placeholder="Email" required>
 				<input type="text" class="form-control m-3" name="place" placeholder="Place" required>
+                <input type="hidden" name="page" value="Journal Review Support">
 				<input type="submit" class="form-control m-3" style="background-color:#09b87e;color:white;border:none;border-radius:5px;padding:12px;font-weight:600;cursor:pointer;" value="Submit Request">
 			</form>
 		</div>
@@ -196,26 +204,34 @@
                     </div>
                     
                     <!-- Form Section -->
-                    <form>
+                    @if(session('success'))
+            <div style="color: green;">{{ session('success') }}</div>
+        @endif
+        @if(session('error'))
+            <div style="color: red;">{{ session('error') }}</div>
+        @endif
+          <form action="{{ route('form.store') }}" method="POST" enctype="multipart/form-data">
+            @csrf
                         <!-- Name and Date Row -->
                         <div class="row mb-4">
                             <div class="col-md-8">
-                                <label for="name" class="form-label fw-bold">Name:</label>
-                                <input type="text" class="form-control form-control-lg border-2" id="name" name="name">
+                                <label class="form-label fw-bold">Name:</label>
+                                <input type="text" class="form-control form-control-lg border-2" name="name">
                             </div>
                             <div class="col-md-4">
-                                <label for="date" class="form-label fw-bold">Date:</label>
-                                <input type="date" class="form-control form-control-lg border-2" id="date" name="date">
+                                <label class="form-label fw-bold">Date:</label>
+                                <input type="date" class="form-control form-control-lg border-2" name="date">
                             </div>
                         </div>
                         
                         <!-- Phone Row -->
                         <div class="row mb-5">
                             <div class="col-12">
-                                <label for="phone" class="form-label fw-bold">Phone:</label>
-                                <input type="tel" class="form-control form-control-lg border-2" id="phone" name="phone">
+                                <label class="form-label fw-bold">Phone:</label>
+                                <input type="tel" class="form-control form-control-lg border-2" name="contact">
                             </div>
                         </div>
+                        <input type="hidden" name="page" value="Journal Review Support">
                         
                         <!-- Submit Button -->
                         <div class="text-center">

@@ -81,7 +81,14 @@
 			<div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
 				<h3 class="mb-4">Get In Touch With Us</h3>
 				<p class="mb-4"> Seeking Guidance for Your PhD Journey? Look No Further! Are you a passionate scholar embarking on your PhD journey? Do you find yourself in need of expert guidance to navigate the complexities of research, writing, and academic milestones? Look no further! Our service is here to support you every step of the way. For any queries, feel free to contact our friendly customer support team. We're here to assist you! Remember, success awaits those who seek Ph.D. guides. Take the leap and let us support you on your path to becoming a distinguished scholar.</p>
-				<form action="mail" method="post">
+				@if(session('success'))
+            <div style="color: green;">{{ session('success') }}</div>
+        @endif
+        @if(session('error'))
+            <div style="color: red;">{{ session('error') }}</div>
+        @endif
+          <form action="{{ route('form.store') }}" method="POST" enctype="multipart/form-data">
+            @csrf
 					<div class="row g-3">
 						<div class="col-md-6">
 							<div class="form-floating">
@@ -97,7 +104,7 @@
 						</div>
 						<div class="col-6">
 							<div class="form-floating">
-								<input type="text" class="form-control" name="phone" id="subject" placeholder="Phone Number">
+								<input type="text" class="form-control" name="contact" id="subject" placeholder="Phone Number">
 								<label for="subject">Phone</label>
 							</div>
 						</div>
@@ -117,6 +124,7 @@
 							<button class="btn btn-secondary rounded-pill py-3 px-5" name="submit" type="submit">Send
 								Message</button>
 						</div>
+						<input type="hidden" name="page" value="Contact">
 					</div>
 				</form>
 			</div>

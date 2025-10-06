@@ -51,18 +51,26 @@
 	<div class="right-panel p-5">
 		<div class="p-3 pt-3" style="display:block">
 			<h5 class="text-center text-success">Get Started</h5>
+			@if(session('success'))
+                <div style="color: green;">{{ session('success') }}</div>
+            @endif
+            @if(session('error'))
+                <div style="color: red;">{{ session('error') }}</div>
+            @endif
 			<!-- Single Form -->
-			<form>
+			<form action="{{ route('form.save') }}" method="POST" enctype="multipart/form-data">
+            @csrf
 				<input type="text" class="form-control m-3" name="name" placeholder="Name" required>
 				<input type="text" class="form-control m-3" name="contact" placeholder="Contact" required>
 				<select class="form-select m-3" name="service">
                     <option selected disabled>Choose your Service</option>
-                    <option value="Synopsis format">Journal Review Support</option>
-                    <option value="Thesis Format">Thesis Review Support</option>
+                    <option value="Journal Review Support">Journal Review Support</option>
+                    <option value="Thesis Review Support">Thesis Review Support</option>
                 </select>
                 <input type="text" class="form-control m-3" name="domain" placeholder="Domain" required>
 				<input type="email" class="form-control m-3" name="email" placeholder="Email" required>
 				<input type="text" class="form-control m-3" name="place" placeholder="Place" required>
+                <input type="hidden" name="page" value="Review Support">
 				<input type="submit" class="form-control m-3" style="background-color:#09b87e;color:white;border:none;border-radius:5px;padding:12px;font-weight:600;cursor:pointer;" value="Submit Request">
 			</form>
 		</div>
@@ -258,51 +266,15 @@
 			<h5 class="fw-bold text-dark mb-2">Chat with the mentor(H)</h5>
 		</div>
 		<div class="col-md-4 text-md-end mt-3 mt-md-0">
-			<button class="btn btn-success btn-hover me-2" data-bs-toggle="modal" data-bs-target="#synopsisModal">
+			<a href="https://wa.me/917708108250" target="_blank_" class="btn btn-success btn-hover me-2">
 			<i class="fab fa-whatsapp me-2"></i>Via WhatsApp
-			</button>
-			<button class="btn btn-secondary btn-hover" data-bs-toggle="modal" data-bs-target="#synopsisModal">
-			<i class="fas fa-phone me-2 "></i>Call
-			</button>
+			</a>
+			<a href="tel:+917708108250" class="btn btn-secondary btn-hover">
+			<i class="fas fa-phone me-2"></i>Call
+			</a>
 		</div>
 		</div>
 		</div>
-</div>
-
-<!-- Modal -->
-<div class="modal fade" id="synopsisModal" tabindex="-1" aria-labelledby="synopsisModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content border-0 shadow-sm">
-      <div class="modal-header bg-primary text-white">
-        <h5 class="modal-title text-white" id="synopsisModalLabel">Your Need</h5>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form>
-          <div class="mb-3">
-            <label class="form-label">Name:</label>
-            <input type="text" class="form-control" name="name" placeholder="Your Name">
-          </div>
-          <div class="mb-3">
-            <label class="form-label">Email:</label>
-            <input type="email" class="form-control" name="email" placeholder="you@example.com">
-          </div>
-          <div class="mb-3">
-            <label class="form-label">Phone:</label>
-            <input type="phone" class="form-control" name="phone" placeholder="you@example.com">
-          </div>
-          <div class="mb-3">
-            <label class="form-label">Country: </label>
-            <input type="text" class="form-control" name="country" placeholder="Your Topic or Institution">
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Submit Request</button>
-      </div>
-    </div>
-  </div>
 </div>
 <!-- CTA End -->
 
@@ -518,19 +490,26 @@
       <!-- Right: Form -->
       <div class="col-md-6">
         <div class="card border-0 shadow-sm p-4" id="ver-form">
-          <form>
+          @if(session('success'))
+            <div style="color: green;">{{ session('success') }}</div>
+        @endif
+        @if(session('error'))
+            <div style="color: red;">{{ session('error') }}</div>
+        @endif
+          <form action="{{ route('form.store') }}" method="POST" enctype="multipart/form-data">
+            @csrf
             <div class="mb-3">
               <label for="name" class="form-label text-dark"><i class="fas fa-user me-2 text-primary"></i>Name</label>
-              <input type="text" id="name" class="form-control" name="name" placeholder="Enter your name">
+              <input type="text" name="name" class="form-control" name="name" placeholder="Enter your name">
             </div>
 			<div class="mb-3">
               <label for="support" class="form-label text-dark"><i class="fas fa-life-ring me-2 text-primary"></i> Support</label>
-              <select class="form-select">
+              <select class="form-select" name="service">
                 <option disabled selected>Choose your support</option>
-                <option>Thesis </option>
-                <option value="">Journal </option>
-                <option value="">Dissertation</option>
-                <option value="">Research paper</option>
+                <option value="Thesis">Thesis </option>
+                <option value="Journal">Journal </option>
+                <option value="Dissertation">Dissertation</option>
+                <option value="Research paper">Research paper</option>
               </select>
             </div>
             <div class="mb-3">
@@ -539,7 +518,7 @@
             </div>
             <div class="mb-3">
               <label for="doc" class="form-label text-dark"><i class="fas fa-file me-2 text-primary"></i> Submit Your Document (.docx,.pdf.word.txt)</label>
-              <input type="file" id="doc" class="form-control" name="doc" placeholder="Submit Your Document">
+              <input type="file" id="doc" class="form-control" name="document" placeholder="Submit Your Document">
             </div>
             <div class="mb-3">
               <label for="email" class="form-label text-dark"><i class="fas fa-envelope me-2 text-primary"></i>Email</label>

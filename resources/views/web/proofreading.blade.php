@@ -51,13 +51,21 @@
 	<div class="right-panel p-5">
 		<div class="p-3 pt-3" style="display:block">
 			<h5 class="text-center text-success">Get Started</h5>
+			@if(session('success'))
+                <div style="color: green;">{{ session('success') }}</div>
+            @endif
+            @if(session('error'))
+                <div style="color: red;">{{ session('error') }}</div>
+            @endif
 			<!-- Single Form -->
-			<form>
+			<form action="{{ route('form.save') }}" method="POST" enctype="multipart/form-data">
+            @csrf
 				<input type="text" class="form-control m-3" name="name" placeholder="Name" required>
 				<input type="text" class="form-control m-3" name="contact" placeholder="Contact" required>
 				<input type="text" class="form-control m-3" name="domain" placeholder="Domain" required>
 				<input type="email" class="form-control m-3" name="email" placeholder="Email" required>
 				<input type="text" class="form-control m-3" name="place" placeholder="Place" required>
+                <input type="hidden" name="page" value="Proofreading">
 				<input type="submit" class="form-control m-3" style="background-color:#09b87e;color:white;border:none;border-radius:5px;padding:12px;font-weight:600;cursor:pointer;" value="Submit Request">
 			</form>
 		</div>
@@ -523,23 +531,31 @@
       <!-- Right: Form -->
       <div class="col-md-6">
         <div class="card border-0 shadow-sm p-4" id="ver-form">
-          <form>
+          @if(session('success'))
+            <div style="color: green;">{{ session('success') }}</div>
+        @endif
+        @if(session('error'))
+            <div style="color: red;">{{ session('error') }}</div>
+        @endif
+          <form action="{{ route('form.store') }}" method="POST" enctype="multipart/form-data">
+            @csrf
             <div class="mb-3">
               <label for="name" class="form-label text-dark"><i class="fas fa-user me-2 text-primary"></i>Name</label>
-              <input type="text" id="name" class="form-control" placeholder="Enter your Name">
+              <input type="text" name="name" class="form-control" placeholder="Enter your Name">
             </div>
 			<div class="mb-3">
               <label for="contact" class="form-label text-dark"><i class="fas fa-phone me-2  text-primary"></i>Phone</label>
-              <input type="text" id="contact" class="form-control" placeholder="Enter your Contact">
+              <input type="text" name="contact" class="form-control" placeholder="Enter your Contact">
             </div>
             <div class="mb-3">
               <label for="email" class="form-label text-dark"><i class="fas fa-envelope me-2 text-primary"></i>Email</label>
-              <input type="email" id="email" name="email" class="form-control" placeholder="Enter your Email">
+              <input type="email" name="email" name="email" class="form-control" placeholder="Enter your Email">
             </div>
             <div class="mb-3">
               <label for="place" class="form-label text-dark"><i class="fas fa-globe me-2 text-primary"></i>Place</label>
-              <input type="text" id="place" name="place" class="form-control" placeholder="Enter your Place">
+              <input type="text" name="place" name="place" class="form-control" placeholder="Enter your Place">
             </div>
+            <input type="hidden" name="page" value="Proofreading">
             <button type="submit" class="btn btn-success w-100 mt-2">Get a Call</button>
           </form>
         </div>

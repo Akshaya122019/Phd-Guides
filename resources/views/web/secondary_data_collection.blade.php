@@ -608,7 +608,7 @@
               <label for="email" class="form-label text-dark"><i class="fas fa-envelope me-2 text-primary"></i>Email</label>
               <input type="email" name="email" class="form-control" placeholder="Enter your email">
             </div>
-			      <div class="mb-3">
+			<div class="mb-3">
               <label for="place" class="form-label text-dark"><i class="fas fa-location-arrow me-2 text-primary"></i>Place </label>
               <input type="text" name="place" class="form-control" placeholder="Enter your Place">
             </div>

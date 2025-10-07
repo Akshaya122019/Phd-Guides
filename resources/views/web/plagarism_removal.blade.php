@@ -505,7 +505,15 @@
       <div class="col-md-6">
         <div class="card border-0 shadow-sm p-4" id="ver-form">
          <!-- Form Section -->
-                    <form>
+                    {{-- Success / Error Flash Messages --}}
+        @if(session('success'))
+            <div style="color: green;">{{ session('success') }}</div>
+        @endif
+        @if(session('error'))
+            <div style="color: red;">{{ session('error') }}</div>
+        @endif
+        <form action="{{ route('form.store') }}" method="POST" enctype="multipart/form-data">
+          @csrf
                         <!-- Name and Date Row -->
                         <div class="mb-3">
                             <label for="name" class="form-label fw-bold">Name:</label>
@@ -520,13 +528,13 @@
                         <!-- Phone -->
                         <div class="mb-3">
                             <label for="document" class="form-label fw-bold">Submit Your Doc (.docx,.pdf.word.txt):</label>
-                            <input type="file" class="form-control form-control-lg border-2" id="document" name="doc">
+                            <input type="file" class="form-control form-control-lg border-2" id="document" name="document">
                         </div>
 						<div class="mb-3">
                             <label for="email" class="form-label fw-bold">Email:</label>
                             <input type="email" class="form-control form-control-lg border-2" id="email" name="email">
                         </div>
-                        
+                        <input type="hidden" name="page" value="Plagarism Removal">
                         <!-- Submit Button -->
                         <div class="text-center">
                             <button type="submit" class="btn btn-success btn-lg px-5 py-3 fw-bold shadow-sm rounded-3">

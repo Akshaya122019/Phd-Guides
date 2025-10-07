@@ -297,7 +297,6 @@
         @if(session('error'))
             <div style="color: red;">{{ session('error') }}</div>
         @endif
-
         <form action="{{ route('form.store') }}" method="POST" enctype="multipart/form-data">
           @csrf
           <div class="mb-3">

@@ -193,7 +193,15 @@
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form>
+        {{-- Success / Error Flash Messages --}}
+        @if(session('success'))
+            <div style="color: green;">{{ session('success') }}</div>
+        @endif
+        @if(session('error'))
+            <div style="color: red;">{{ session('error') }}</div>
+        @endif
+        <form action="{{ route('form.store') }}" method="POST" enctype="multipart/form-data">
+          @csrf
           <div class="mb-3">
             <label class="form-label">Name:</label>
             <input type="text" name="name" class="form-control" placeholder="Your Name">
@@ -208,13 +216,15 @@
           </div>
           <div class="mb-3">
             <label class="form-label">Document:</label>
-            <input type="file" name="doc" class="form-control" placeholder="Submit Your Document">
+            <input type="file" name="document" class="form-control" placeholder="Submit Your Document">
           </div>
-        </form>
-      </div>
+          <input type="hidden" name="page" value="Dissertation Formatting">
+        
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Submit Request</button>
+        <button type="submit" class="btn btn-primary">Submit Request</button>
+      </div>
+      </form>
       </div>
     </div>
   </div>

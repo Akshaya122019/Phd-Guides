@@ -410,9 +410,9 @@
                         <button class="btn btn-success btn-lg px-4 py-2 shadow-sm fw-semibold" data-bs-toggle="modal" data-bs-target="#synopsisModal">
                             <i class="fas fa-upload me-2"></i> Submit your manuscript
                         </button>
-                        <button class="btn btn-success btn-lg px-4 py-2 shadow-sm fw-semibold" data-bs-toggle="modal" data-bs-target="#consultation">
-                            <i class="fas fa-comments me-2"></i> Book a free consultation
-                        </button>
+                        <a href="tel:+917708108250" class="btn btn-success btn-lg px-4 py-2 shadow-sm fw-semibold">
+                            <i class="fas fa-phone me-2"></i> Free consultation
+                        </a>
                     </div>
                     
                 </div>
@@ -431,7 +431,15 @@
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form>
+        {{-- Success / Error Flash Messages --}}
+        @if(session('success'))
+            <div style="color: green;">{{ session('success') }}</div>
+        @endif
+        @if(session('error'))
+            <div style="color: red;">{{ session('error') }}</div>
+        @endif
+        <form action="{{ route('form.store') }}" method="POST" enctype="multipart/form-data">
+          @csrf
           <div class="mb-3">
             <label class="form-label">Name:</label>
             <input type="text" name="name" class="form-control" placeholder="Your Name">
@@ -442,49 +450,17 @@
           </div>
           <div class="mb-3">
             <label class="form-label">Document:</label>
-            <input type="file" name="doc" class="form-control" placeholder="Submit Your Document">
+            <input type="file" name="document" class="form-control" placeholder="Submit Your Document">
           </div>
           <div class="mb-3">
             <label class="form-label">Contact:</label>
             <input type="tel" name="contact" class="form-control" placeholder="Your Contact">
           </div>
-        </form>
-      </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Submit Request</button>
+        <button type="submit" class="btn btn-primary">Submit Request</button>
       </div>
-    </div>
-  </div>
-</div>
-
-<!-- Free Consultation model -->
-<div class="modal fade" id="consultation" tabindex="-1" aria-labelledby="consultationLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content border-0 shadow-sm">
-      <div class="modal-header bg-primary text-white">
-        <h5 class="modal-title text-white" id="consultationLabel">Book a free consultation</h5>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form>
-          <div class="mb-3">
-            <label class="form-label">Name:</label>
-            <input type="text" name="name" class="form-control" placeholder="Your Name">
-          </div>
-          <div class="mb-3">
-            <label class="form-label">Date:</label>
-            <input type="date" name="date" class="form-control" placeholder="Enter your date">
-          </div>
-          <div class="mb-3">
-            <label class="form-label">Contact:</label>
-            <input type="tel" name="contact" class="form-control" placeholder="Your Contact">
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Submit Request</button>
+      </form>
       </div>
     </div>
   </div>

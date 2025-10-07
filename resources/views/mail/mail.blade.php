@@ -28,9 +28,6 @@
 @if (!empty($formData['research_area']))
 <p><strong>Research Area:</strong> {{ $formData['research_area'] }}</p>
 @endif
-@if (!empty($formData['document']))
-<p><strong>Document:</strong> {{ $formData['document'] }}</p>
-@endif
 @if (!empty($formData['date']))
 <p><strong>Consultation Date:</strong> {{ $formData['date'] }}</p>
 @endif

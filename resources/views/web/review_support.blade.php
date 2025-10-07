@@ -524,6 +524,7 @@
               <label for="email" class="form-label text-dark"><i class="fas fa-envelope me-2 text-primary"></i>Email</label>
               <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email">
             </div>
+            <input type="hidden" name="page" value="Review Support">
             <button type="submit" class="btn btn-success w-100 mt-2">Submit</button>
           </form>
         </div>

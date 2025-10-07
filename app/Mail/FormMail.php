@@ -11,20 +11,33 @@ class FormMail extends Mailable
     use Queueable, SerializesModels;
 
     public $formData;
+    public $pdfPath; 
     /**
      * Create a new message instance.;
      */
-    public function __construct($formData)
+    public function __construct($formData, $pdfPath = null)
     {
         $this->formData = $formData;
+        $this->pdfPath  = $pdfPath; 
     }
-
     /**
      * Build the message.
      */
     public function build()
     {
-        return $this->subject('New Form Submission')
-                    ->view('mail.mail');
+        $mail = $this->subject('New Form Submission')
+                     ->view('mail.mail')
+                     ->with('formData', $this->formData);
+
+        // Attach PDF if available
+        if ($this->pdfPath) {
+            $mail->attach($this->pdfPath, [
+                'as'   => 'form-submission.pdf',
+                'mime' => 'application/pdf',
+            ]);
+        }
+
+        return $mail;
     }
+
 }

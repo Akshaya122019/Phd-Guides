@@ -16,20 +16,20 @@
 			<div class="col-lg-4 col-md-6 d-flex justify-content-center">
 			    <div>
 				<h5 class="text-white mb-4">Quick Links</h5>
-				<a class="btn btn-link" href="assistance.php">Assistance</a>
-				<a class="btn btn-link" href="contact-us.php">Contact Us</a>
-				<a class="btn btn-link" href="plagarism_removal.php">Plagarism Removal</a>
-				<a class="btn btn-link" href="viva_voce.php">Viva Voce</a>
-				<a class="btn btn-link" href="proofreading.php">Proofreading</a>
+				<a class="btn btn-link" href="{{route('assistance')}}">Assistance</a>
+				<a class="btn btn-link" href="{{route('contact-us')}}">Contact Us</a>
+				<a class="btn btn-link" href="{{route('plagarism_removal')}}">Plagarism Removal</a>
+				<a class="btn btn-link" href="{{route('viva_voce')}}">Viva Voce</a>
+				<a class="btn btn-link" href="{{route('proofreading')}}">Proofreading</a>
 				</div>
 			</div>
 			<div class="col-lg-4 col-md-6">
 				<h5 class="text-white mb-4">What We do</h5>
-				<a class="btn btn-link" href="selection_of_topics.php">Selection of Topics</a>
-				<a class="btn btn-link" href="research_proposal_writing.php">Research Proposal Writing</a>
-				<a class="btn btn-link" href="implementation.php">Implementation</a>
-				<a class="btn btn-link" href="thesisi_writing.php">Thesis Writing</a>
-				<a class="btn btn-link" href="dissertation.php">Dissertation Writing</a>
+				<a class="btn btn-link" href="{{route('selection_of_topics')}}">Selection of Topics</a>
+				<a class="btn btn-link" href="{{route('research_proposal_writing')}}">Research Proposal Writing</a>
+				<a class="btn btn-link" href="{{route('implementation')}}">Implementation</a>
+				<a class="btn btn-link" href="{{route('thesis_writing')}}">Thesis Writing</a>
+				<a class="btn btn-link" href="{{route('dissertation')}}">Dissertation Writing</a>
 			</div>
 		</div>
 	</div>

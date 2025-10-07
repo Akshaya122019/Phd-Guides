@@ -51,18 +51,26 @@
 	<div class="right-panel p-5">
 		<div class="p-3 pt-3" style="display:block">
 			<h2 class="text-center fs-4 text-success">Get Started</h2>
-			<!-- Single Form -->
-			<form>
+			{{-- Success / Error Flash Messages --}}
+        @if(session('success'))
+            <div style="color: green;">{{ session('success') }}</div>
+        @endif
+        @if(session('error'))
+            <div style="color: red;">{{ session('error') }}</div>
+        @endif
+        <form action="{{ route('form.store') }}" method="POST" enctype="multipart/form-data">
+          @csrf
 				<input type="text" class="form-control m-3" name="name" placeholder="Name" required>
 				<input type="text" class="form-control m-3" name="research_area" placeholder="Research Area" required>
 				<input type="text" class="form-control m-3" name="country" placeholder="Country" required>
 				<input type="text" class="form-control m-3" name="state" placeholder="State" required>
-				<input type="text" class="form-control m-3" name="city" placeholder="City" required>
+				<input type="text" class="form-control m-3" name="place" placeholder="City" required>
                 <input type="text" class="form-control m-3" name="message" placeholder="Message to the Editor or Reviewer" required>
 				<div class="form-control m-3 position-relative">
 					<label for="pdf" id="pdfLabel" class="text-muted">Submit your Pdf (Optional)</label>
-					<input type="file" class="form-control" name="pdf" id="pdf" onchange="updatePdfLabel(this)">
-				</div>				
+					<input type="file" class="form-control" name="document" id="pdf" onchange="updatePdfLabel(this)">
+				</div>		
+				<input type="hidden" name="page" value="Contact">		
 				<input type="submit" class="form-control m-3" style="background-color:#09b87e;color:white;border:none;border-radius:5px;padding:12px;font-weight:600;cursor:pointer;" value="Submit Request">
 			</form>
 		</div>
@@ -87,7 +95,7 @@
         @if(session('error'))
             <div style="color: red;">{{ session('error') }}</div>
         @endif
-          <form action="{{ route('form.store') }}" method="POST" enctype="multipart/form-data">
+          <form action="{{ route('form.save') }}" method="POST" enctype="multipart/form-data">
             @csrf
 					<div class="row g-3">
 						<div class="col-md-6">

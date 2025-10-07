@@ -32,7 +32,7 @@ class FormController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function save(Request $request)
 {
     $formData = $request->all();   // collect form inputs
 
@@ -50,22 +50,55 @@ class FormController extends Controller
             ->with('error', 'Something went wrong. Please try again ❌');
     }
 }
-public function save(Request $request)
+public function store(Request $request)
 {
-    $formData = $request->all();   // collect form inputs
+    $request->validate([
+        'name'     => 'required|string|max:255',
+        'email'    => 'required|email|max:255',
+        'contact'    => 'required|string|max:20',
+        'page'     => 'nullable|string|max:255',
+        'document' => 'nullable|file|mimes:pdf,doc,docx,jpg,png|max:2048',
+    ]);
 
     try {
-        Mail::to('akshayafeather@gmail.com')->send(new FormMail($formData));
+        $filename = null;
+        $document = null;
+        $pdfAbsolutePath = null;
 
-        return redirect()
-            ->back()
-            ->with('success', 'Form submitted successfully ✅');
+        if ($request->hasFile('document')) {
+            $file = $request->file('document');
+            $filename = time() . '_' . $file->getClientOriginalName();
+
+            $destinationPath = public_path('storage/uploads/forms');
+            if (!file_exists($destinationPath)) {
+                mkdir($destinationPath, 0777, true);
+            }
+            $file->move($destinationPath, $filename);
+            $document = asset('storage/uploads/forms/' . $filename);
+
+            $pdfAbsolutePath = $destinationPath . '/' . $filename;
+        }
+
+        $formData = [
+            'name'     => $request->name,
+            'email'    => $request->email,
+            'contact'    => $request->contact,
+            'service'    => $request->service,
+            'research_area'    => $request->research_area,
+            'country'    => $request->country,
+            'state'    => $request->state,
+            'place'    => $request->place,
+            'message'    => $request->message,
+            'document' => $document,
+            'page'     => $request->page,
+        ];
+
+        Mail::to('akshayafeather@gmail.com')->send(new FormMail($formData, $pdfAbsolutePath));
+
+        return redirect()->back()->with('success', 'Form submitted successfully ✅');
     } catch (\Exception $e) {
-        \Log::error('Mail sending failed: '.$e->getMessage());
-
-        return redirect()
-            ->back()
-            ->with('error', 'Something went wrong. Please try again ❌');
+        \Log::error('Form submission failed: ' . $e->getMessage());
+        return redirect()->back()->with('error', 'Something went wrong. Please try again ❌');
     }
 }
 
